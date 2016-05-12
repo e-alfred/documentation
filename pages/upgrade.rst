@@ -299,3 +299,5 @@ Web Interface Config Changes
 The web interface has been integrated into the Graylog server and was rewritten in React. Therefore configuring it has changed fundamentally since the last version(s). Please consult :ref:`configuring_webif` for details.
 
 Please take note that the ``application.context`` configuration parameter present in Graylog 1.x (and earlier) is not existing anymore. The web interface can currently only be served without a path prefix.
+
+If you use Apache2 or NGINX as a reverse proxy for your Graylog instance you should check your configuration, especially the if the request header X-Graylog-Server-URL is set. Otherwise the Graylog webserver is not able to connect to the REST interface for API calls.
